@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="72" viewBox="0 0 250 72" role="img" aria-labelledby="marca-titulo marca-descricao">
+  <title id="marca-titulo">Pipeline</title>
+  <desc id="marca-descricao">Dois nós ligados por uma linha, seguidos da palavra pipeline.</desc>
+  <g transform="translate(-3.75 6) scale(2.5)">
+    <path d="M8 12h6" fill="none" stroke="#ff6a3d" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="5.5" cy="12" r="2.4" fill="#ff6a3d"/>
+    <circle cx="17" cy="12" r="2.4" fill="none" stroke="#ff6a3d" stroke-width="1.6"/>
+  </g>
+  <text x="67" y="47"
+        font-family="'Cascadia Code','JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+        font-size="40" font-weight="600" letter-spacing="-1.2" fill="#eceef0">pipeline</text>
+</svg>
