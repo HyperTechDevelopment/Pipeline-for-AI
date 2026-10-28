@@ -229,4 +229,4 @@ Pipeline/
 
 ## Licença
 
-Uso livre. Se você adaptar o catálogo para o seu conjunto de skills, o formato foi feito para isso.
+[MIT](LICENSE). Se você adaptar o catálogo para o seu conjunto de skills, o formato foi feito para isso.
