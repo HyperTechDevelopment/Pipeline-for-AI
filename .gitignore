@@ -1,0 +1,36 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Ambiente local
+.env
+.env.*
+
+# Dependências futuras e saída de build
+node_modules/
+dist/
+build/
+
+# Ferramentas e caches locais
+.remember/
+.commandcode/
+.claude/autoharness/
+graft/.cache/
+.cache/
+.trail/
+
+# AGENTS
+AGENTS.md
+opencode.json
+.claude/
