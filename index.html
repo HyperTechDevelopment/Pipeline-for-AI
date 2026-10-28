@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline · o que eu rodo no trabalho e nos projetos pessoais</title>
+<meta name="description" content="Quatro pipelines de skills que eu uso no dia a dia: feature com subagentes, debug do agente, interface sem slop e entrega com review e PR.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0b0c'/%3E%3Cpath d='M11 16h10' stroke='%23ff6a3d' stroke-width='2'/%3E%3Ccircle cx='9' cy='16' r='3' fill='%23ff6a3d'/%3E%3Ccircle cx='23' cy='16' r='3' fill='none' stroke='%23ff6a3d' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#/" aria-label="Pipeline, início">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M8 12h6" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="5.5" cy="12" r="2.4" fill="currentColor"/>
+        <circle cx="17" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      </svg>
+      <span class="brand-word">pipeline</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#catalogo">catálogo</a>
+      <a href="#como-funciona">como funciona</a>
+      <a href="README.md" target="_blank" rel="noopener">readme</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HOME ============================= -->
+  <div id="view-home">
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> catálogo pessoal</p>
+        <h1 class="hero-title">
+          Quatro pipelines,<br>
+          <span class="hero-title-dim">da feature ao PR.</span>
+        </h1>
+        <p class="hero-lede">
+          Feature começa com um prompt que dispara subagentes, um por skill. Depois do meu debug manual, o agente
+          faz a segunda revisão. A interface passa por seis skills até não sobrar slop de componente e de escrita,
+          e o fechamento vai de commits atômicos ao PR. Os quatro rodam no meu trabalho e nos meus projetos pessoais.
+        </p>
+
+        <dl class="hero-stats">
+          <div><dt>pipelines</dt><dd id="stat-pipelines">—</dd></div>
+          <div><dt>skills</dt><dd id="stat-skills">—</dd></div>
+          <div><dt>estágios</dt><dd id="stat-stages">—</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-label">
+      <div class="container">
+        <div class="featured-head">
+          <p class="label" id="featured-label"><span class="label-idx">01</span> implementação</p>
+          <a class="featured-link" href="#/p/feature">abrir pipeline <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="chain-scroll" tabindex="0" role="region" aria-label="Sequência do pipeline de implementação">
+          <div class="chain chain-lg" id="hero-chain"></div>
+        </div>
+        <p class="featured-foot">Um prompt carrega o PLAN da fase e cada subagente recebe uma das skills.</p>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalogo" aria-labelledby="catalogo-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label"><span class="label-idx">01</span> catálogo</p>
+            <h2 id="catalogo-title">Os quatro fluxos, estágio por estágio</h2>
+          </div>
+          <p class="section-aside">Cada estágio com o que entrega e o critério que eu uso para avançar.</p>
+        </header>
+
+        <div class="filterbar">
+          <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+          <div class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M16 16l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <input id="search" type="search" placeholder="filtrar por skill, etapa ou tarefa" aria-label="Filtrar pipelines" autocomplete="off">
+            <kbd class="search-kbd">/</kbd>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>Nenhum pipeline corresponde a esse filtro. <button type="button" class="link-btn" id="reset-filters">Limpar filtros</button></p>
+      </div>
+    </section>
+
+    <section class="creed" aria-labelledby="creed-title">
+      <div class="container creed-inner">
+        <div class="creed-left">
+          <p class="label"><span class="label-idx">02</span> o que eu não terceirizo</p>
+          <h2 id="creed-title">Debug, revisão e qualidade de código não podem morrer.</h2>
+        </div>
+        <div class="creed-right">
+          <p class="creed-body">
+            O agente escreve, revisa e testa, mas a decisão continua sendo minha. Eu debugo na mão antes de pedir a
+            segunda revisão, leio o diff antes de aprovar e confiro o que o teste cobre. São processos que eu pratico
+            em toda tarefa, com agente ou sem.
+          </p>
+          <ul class="creed-list">
+            <li>debug manual</li>
+            <li>revisão de código</li>
+            <li>qualidade</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory" id="memoria" aria-labelledby="memory-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label"><span class="label-idx">03</span> memória</p>
+            <h2 id="memory-title">O agente precisa lembrar da sessão anterior.</h2>
+          </div>
+        </header>
+        <p class="memory-lede">
+          Sem memória, cada sessão começa do zero e a correção de ontem volta como erro hoje. Duas ferramentas cuidam disso.
+        </p>
+        <div class="memory-tools">
+          <article class="memory-tool">
+            <span class="tool-kind">notas</span>
+            <h3>Obsidian</h3>
+            <p>Meu vault de notas, aberto ao agente por MCP. O que eu escrevo sobre o projeto fica lá, e o agente lê e escreve nas mesmas notas.</p>
+          </article>
+          <article class="memory-tool">
+            <span class="tool-kind">sessões</span>
+            <h3>AI-Memory</h3>
+            <p>Servidor MCP que guarda as sessões: observações, decisões e o que ficou pendente. Antes de refazer uma investigação, eu busco ali.</p>
+          </article>
+        </div>
+        <p class="memory-note">As duas ficam fora dos pipelines. O trabalho consulta essa memória antes de começar.</p>
+      </div>
+    </section>
+
+    <section class="principles" id="como-funciona" aria-labelledby="principles-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label"><span class="label-idx">04</span> como funciona</p>
+            <h2 id="principles-title">O que vale para os quatro</h2>
+          </div>
+        </header>
+
+        <div class="contrast">
+          <div class="contrast-col">
+            <p class="label">skill</p>
+            <p class="contrast-lead">faz uma coisa</p>
+            <p class="contrast-body">Uma competência isolada. Funciona em qualquer contexto e não sabe quando parar.</p>
+          </div>
+          <div class="contrast-arrow" aria-hidden="true">→</div>
+          <div class="contrast-col">
+            <p class="label">pipeline</p>
+            <p class="contrast-lead">faz na ordem</p>
+            <p class="contrast-body">Uma sequência com dependências e critério de saída. Serve a um tipo de tarefa, e para de servir quando a tarefa muda.</p>
+          </div>
+        </div>
+
+        <ol class="rules">
+          <li class="rule">
+            <span class="rule-num">01</span>
+            <div>
+              <h3>Cada estágio deixa algo pronto para o próximo</h3>
+              <p>Se o estágio não produz nada que o próximo usa, ele não está no pipeline. Um estágio sem entrega não tem como ser verificado.</p>
+            </div>
+          </li>
+          <li class="rule">
+            <span class="rule-num">02</span>
+            <div>
+              <h3>Só avanço quando o critério é cumprido</h3>
+              <p>Concluir a tarefa não quer dizer que o objetivo foi alcançado. Quem decide se o estágio fechou é o critério dele, não o tempo que passou.</p>
+            </div>
+          </li>
+          <li class="rule">
+            <span class="rule-num">03</span>
+            <div>
+              <h3>A ordem muda o resultado</h3>
+              <p><code>systematic-debugging</code> vem antes de <code>code-review-excellence</code> porque revisar código que ainda falha gasta tempo com o problema errado. <code>tdd</code> vem antes de <code>systematic-debugging</code> para o bug virar teste antes de virar correção.</p>
+            </div>
+          </li>
+        </ol>
+
+        <aside class="callout">
+          <p class="label">limite prático</p>
+          <p>Pipeline longo consome contexto. Quando o agente começa a esquecer o plano, eu paro e retomo do estágio em que estava, com o PLAN e as decisões registrados. Reiniciar do zero custa mais do que retomar.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="origins" id="origem" aria-labelledby="origins-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label"><span class="label-idx">05</span> de onde vêm</p>
+            <h2 id="origins-title">O crédito é de quem escreveu cada skill.</h2>
+          </div>
+          <a class="btn origins-cta" href="https://www.skills.sh/" target="_blank" rel="noopener">
+            abrir skills.sh <span aria-hidden="true">→</span>
+          </a>
+        </header>
+        <p class="origins-lede">
+          Eu escolho a ordem e o critério de saída. As skills vêm de repositórios públicos, e cada linha abaixo
+          aponta para o autor. Para instalar, o catálogo fica no skills.sh.
+        </p>
+        <ul class="origin-list" id="origin-list"></ul>
+        <p class="origins-note">systematic-debugging cita a coleção superpowers no próprio texto e não registra repositório no lock local.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================ DETALHE ============================ -->
+  <div id="view-detail" hidden></div>
+
+  <noscript>
+    <div class="container noscript">
+      <p>Os cards são renderizados com JavaScript. Sem ele, o conteúdo completo continua no <a href="README.md">README</a>.</p>
+    </div>
+  </noscript>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-mark" aria-hidden="true">pipeline</p>
+    <div class="footer-inner">
+      <p>catálogo pessoal, em uso no trabalho e em projetos pessoais</p>
+      <p class="footer-meta">html + css + js · nenhuma dependência · <a href="README.md" target="_blank" rel="noopener">README</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
